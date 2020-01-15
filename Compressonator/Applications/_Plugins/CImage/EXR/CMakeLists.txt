@@ -23,17 +23,17 @@ target_include_directories(EXR
                            ../../../../CMP_CompressonatorLib
                            ../../../../CMP_Framework/Common/half
                            ../../Common/
-                           /usr/include/OpenEXR
+                           ${OpenEXR_INCLUDE_DIRS}
                            )
 
 if (APPLE)
 target_include_directories(EXR
                            PRIVATE
                            /usr/local/include/OpenEXR/)
-find_package(Boost COMPONENTS system filesystem) 
+find_package(Boost COMPONENTS system filesystem)
 if(Boost_FOUND)
     target_include_directories(EXR
-                               PRIVATE 
+                               PRIVATE
                                ${Boost_INCLUDE_DIRS})
 endif()
 endif()
